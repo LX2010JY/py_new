@@ -16,3 +16,9 @@
 		4.6.3 1110xxxx 10xxxxxx 10xxxxxx 如果是这种格式则是三个字节当一个单元.
 		4.6.4 UTF-8 由于需要额外标识信息，所以 一个字节只有 128 ，两个字节只有2048 ，三个字节 ...
 	4.7 前面都是Unicode版本1 内容，Unicode版本2，多出了UTF-32 ，所以UTF-16也是可变的，在2个字节和4个字节选择，UTF-8 在1-8个字节选择
+
+	EF BB BF　　　 UTF-8
+	FE FF　　　　　UTF-16/UCS-2, little endian
+	FF FE　　　　　UTF-16/UCS-2, big endian
+	FF FE 00 00　　UTF-32/UCS-4, little endian.
+	00 00 FE FF　　UTF-32/UCS-4, big-endian.

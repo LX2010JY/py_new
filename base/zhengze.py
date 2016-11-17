@@ -17,7 +17,16 @@ with open("../file/index.html",'w',encoding='utf-8') as f:
 	f.write(html.decode('utf-8'))
 	f.close()
 
+res = ''
 with codecs.open("../file/index.html","r",encoding="utf-8") as f:
-	a = f.read().encode("GBK",'ignore').decode("GBK")
-	print(a)
-	print(len(a))
+	res = f.read().encode("GBK",'ignore').decode("GBK")
+	print(res)
+	print(len(res))
+
+
+req = Request('http://www.lexue100.com')
+html = urlopen(req).read();
+response = html.decode('utf-8')
+regx = re.compile("<p .+</p>")
+all_span = re.findall(regx,response)
+print(all_span)
