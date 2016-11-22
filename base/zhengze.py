@@ -26,7 +26,13 @@ with codecs.open("../file/index.html","r",encoding="utf-8") as f:
 
 req = Request('http://www.lexue100.com')
 html = urlopen(req).read();
-response = html.decode('utf-8')
-regx = re.compile("<p .+</p>")
-all_span = re.findall(regx,response)
-print(all_span)
+# 获取的网页内容中有特殊字符，解码后不能直接print ??????后面什么原因还是不太了解，好像是解码没有全部成功
+response = html.decode('utf-8').encode('GBK','ignore').decode('GBK')
+# print(response)
+regx = re.compile("<div .+</div>")
+all_div = re.findall(regx,response)
+num = 0
+for div in all_div:
+	# num++不对
+	num+=1
+	print("{0:>4}:{1}".format(num,div))

@@ -18,6 +18,9 @@ print("fllename:{0}".format(f.name))
 print("encoding:{0}".format(f.encoding))
 
 line_number = 0
+
+
+# open的encoding参数，写入文件的时候，因为文件不能存储字符序列，只能存字节序列，所以必须告知python使用何种编码格式将字符序列转为字节序列存入文件，否则读取文件时，由于不清楚编码格式，字节序列转字符序列将会出错
 with(open('class.py','r',encoding='utf-8')) as wf:
 	# 循环获取可以获取分行内容
 	for item in wf:
