@@ -22,3 +22,7 @@
 	FF FE　　　　　UTF-16/UCS-2, big endian
 	FF FE 00 00　　UTF-32/UCS-4, little endian.
 	00 00 FE FF　　UTF-32/UCS-4, big-endian.
+
+5. 进制
+    0x开头表示16进制 ，一个字节8位二进制，用16进制表示只需要2位，但是需要0x开头，所以经常看到 0x1F 0xAD 之类，都是16进制的一个字节
+    以0开头的代表8进制

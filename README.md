@@ -36,3 +36,6 @@
 # None
 >None 是python特殊常量，它不等于0、空字符串、False，它不和任何非None相等，它有自己的数据类型 NoneType ，判断时 None 为 False ,not None 为 True
 
+## 字符串前面的 r,u
+>1. 经常在字符串前面加r ,如 `print(r'dfhajsd')` r代表其中的字符串都是普通字符，哪怕里面有`/\*&^%$`等待的特殊字符，都会直接输出，经常在正则表达式中使用
+>2. u 代表Unicode编码格式，写非英文字符
