@@ -39,12 +39,13 @@ class SpiderMain(object):
         print(u'下载：',url)
         print(u'开始解析，请稍后.')
         self.crawl(url)
-        conf.PERSUM - len(self.res_datas)*100.0
+        conf.PERSUM = len(self.res_datas)*100.0
         print(u'共有{0}条视频'.format(len(self.res_datas)))
         print(u'课程名称：',self.res_datas[0].subject)
         for res_data in self.res_datas:
             print(u'------->',res_data.filename)
-        state = input(u'选择清晰度（1：超清UHD，2：高清HD，3：普清SD）：'.encode('gbk'))
+        state = input(u'选择清晰度（1：超清UHD，2：高清HD，3：普清SD）：')
+        state = int(state)
         if state not in [1,2,3]:
             print(u'输入有误.')
             return

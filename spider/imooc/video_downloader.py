@@ -28,9 +28,9 @@ class File_Downloader(threading.Thread):
             下载视频之前，先创建视频文件夹
         :return:
         '''
-        self.filedir = self._fileinfo.subject+"("+conf.INFOR[conf.STATE]+")"
+        self.filedir = conf.PATH+self._fileinfo.subject+"("+conf.INFOR[conf.STATE]+")"
         if not os.path.exists(self.filedir):
-            os.mkdir(self.filedir)
+            os.makedirs(self.filedir)
 
     def Schedule(self,blocknum,blocksize,totalsize):
         '''
@@ -50,7 +50,7 @@ class File_Downloader(threading.Thread):
             nowsum = 0
             for item in conf.PERLIST:
                 nowsum+=item
-            str = u"当前下载进度:---------------->>>>{0:.2f}".format(100*nowsum/conf.PERSUM)
+            str = u"当前下载进度:---------------->>>>{0:.2f}%".format(100*nowsum/conf.PERSUM)
             sys.stdout.write(str+"\r")
             sys.stdout.flush()
         except:
