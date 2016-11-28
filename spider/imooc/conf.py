@@ -5,6 +5,8 @@ import threading
 DOWNLOAD_URL = 'http://www.imooc.com/course/ajaxmediainfo/?mid={}&mode=flash' #下载链接
 COURSEURL = 'http://www.imooc.com/learn/' #课程链接
 
+PATH = 'G:/imooc/' # 视频下载目录地址
+
 CHOOSE=['H','M','L'] #视频品质
 
 STATE='L' #视频默认品质

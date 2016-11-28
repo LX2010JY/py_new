@@ -39,7 +39,7 @@ class SpiderMain(object):
         print(u'下载：',url)
         print(u'开始解析，请稍后.')
         self.crawl(url)
-        conf.PERSUM - len(self.res_datas)*100.0
+        conf.PERSUM = len(self.res_datas)*100.0
         print(u'共有{0}条视频'.format(len(self.res_datas)))
         print(u'课程名称：',self.res_datas[0].subject)
         for res_data in self.res_datas:
