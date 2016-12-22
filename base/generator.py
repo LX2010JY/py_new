@@ -133,7 +133,7 @@ def rules_last(rules_filename):
 	with open(rules_filename,encoding="utf-8") as f:
 		for line in f:
 			p,s,r = line.split(None,3)
-			# yield 相当于暂停函数的执行，但是保存了函数执行到这儿所有的状态，变量值，使用next调用时即可接下去执行
+			# yield 相当于暂停函数的执行，但是保存了函数执行到这儿所有的状态，变量值，使用next调用时即可接下去执行,【yield 后面的值会返回，相当于return，不太懂】
 			yield build_match_and_apply_functions(p,s,r)
 def plural_last(noun,rules_filename="generator_rules.txt"):
 	for matches_rule,apply_rule in rules_last(rules_filename):
