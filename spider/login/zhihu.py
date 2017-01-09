@@ -37,7 +37,7 @@ headers = {
 
 # 使用登录cookie信息
 session = requests.session()
-session.cookies = cookielib.LWPCookieJar(filename='cookies')
+session.cookies = cookielib.LWPCookieJar(filename='cookies.txt')
 try:
     session.cookies.load(ignore_discard=True)
 except:
@@ -58,6 +58,7 @@ def get_xsrf():
 
 # 获取验证码
 def get_captcha():
+    print('adasd')
     t = str(int(time.time() * 1000))
     captcha_url = 'https://www.zhihu.com/captcha.gif?r=' + t + "&type=login"
     r = session.get(captcha_url, headers=headers)
@@ -94,7 +95,7 @@ def login(secret, account):
         postdata = {
             '_xsrf': get_xsrf(),
             'password': secret,
-            'remember_me': 'true',
+            'remember_me': 'false',
             'phone_num': account,
         }
     else:
@@ -107,13 +108,14 @@ def login(secret, account):
         postdata = {
             '_xsrf': get_xsrf(),
             'password': secret,
-            'remember_me': 'true',
+            'remember_me': 'false',
             'email': account,
         }
     try:
         # 不需要验证码直接登录成功
         login_page = session.post(post_url, data=postdata, headers=headers)
         login_code = login_page.text
+        get_captcha()
         print(login_page.status_code)
         print(login_code)
     except:
@@ -124,15 +126,13 @@ def login(secret, account):
         print(login_code['msg'])
     session.cookies.save()
 
-try:
-    input = raw_input
-except:
-    pass
-
 
 if __name__ == '__main__':
     if isLogin():
         print('您已经登录')
+        a = session.get('https://www.zhihu.com',headers=headers)
+        with(open('file.html','w',encoding='utf-8')) as f:
+            f.write(a.text)
     else:
         account = input('请输入你的用户名\n>  ')
         secret = input("请输入你的密码\n>  ")
