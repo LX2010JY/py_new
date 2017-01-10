@@ -1,5 +1,4 @@
 from selenium import webdriver
-from tesseract
 import time
 # 这里需要下载phantom浏览器
 driver = webdriver.PhantomJS(executable_path='../../phantomjs.exe')
