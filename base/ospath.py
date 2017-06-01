@@ -40,3 +40,4 @@ print(s.count('d'))
 by = b"asdasda" #python 默认定义编码格式为ascii，中文没法这样定义 
 by = "我打瞌睡道具卡蝴蝶结款".encode('utf-8')
 print(type(by))
+print(by)

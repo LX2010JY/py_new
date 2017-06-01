@@ -46,7 +46,11 @@ class HtmlParse(object):
             fileinfo.filename = link.get_text().strip().replace(':','_').replace("\r\n","").replace(u'开始学习',"").replace(' ','')
             fileinfo.mid = link['href'].split('/')[2]
             json = html_down.download(conf.DOWNLOAD_URL.format(fileinfo.mid)).decode('utf-8').replace('\/','/')
-            dic_json = eval(json)
+            try:
+                dic_json = eval(json)
+            except:
+                print('error')
+
             fileinfo.url['L'] = dic_json['data']['result']['mpath'][0]
             fileinfo.url['M'] = dic_json['data']['result']['mpath'][1]
             fileinfo.url['H'] = dic_json['data']['result']['mpath'][2]

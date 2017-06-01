@@ -1,0 +1,10 @@
+2016/12/14 08:54:50 [emerg] 12128#3536: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2016/12/14 08:57:34 [error] 11032#11664: *1 CreateFile() "C:\nginx-1.10.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080"
+2016/12/14 09:10:32 [notice] 10340#4512: signal process started
+2016/12/14 09:10:48 [error] 11032#11664: *3 CreateFile() "C:\nginx-1.10.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+2016/12/14 09:10:57 [notice] 11000#8572: signal process started
+2016/12/14 09:10:57 [error] 11000#8572: CreateFile() "C:\nginx-1.10.2/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2016/12/14 09:11:03 [notice] 11124#11496: signal process started
+2016/12/14 09:11:03 [error] 11124#11496: CreateFile() "C:\nginx-1.10.2/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2016/12/14 09:12:22 [notice] 11468#7916: signal process started
+2016/12/14 09:12:22 [error] 11468#7916: CreateFile() "C:\nginx-1.10.2/logs/nginx.pid" failed (2: The system cannot find the file specified)

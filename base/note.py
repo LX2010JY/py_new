@@ -8,7 +8,7 @@ arr.insert(1,1)
 arr.insert(1,23)
 arr.insert(0,122)
 arr.insert(1,2333)
-
+print(arr)
 arr.clear()
 arr = ['第一','第二','第三']
 
