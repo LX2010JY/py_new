@@ -37,4 +37,8 @@ git log
 ```
 git log --pretty=oneline
 ```
-
+返回历史版本，通过commit id
+```
+git reset --hard 02138eec7123180b5579085e7212edcc7feef0cc #不用全写完，git会自动匹配，但是要保证能找到唯一的一个
+```
+将一个修
