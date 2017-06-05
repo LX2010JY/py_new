@@ -12,7 +12,7 @@ def search(lines,pattern,history=5):
 
 
 def createfile():
-    with(open('../file/lines.txt','w',encoding='utf-8')) as f:
+    with(open('../../file/lines.txt','w',encoding='utf-8')) as f:
         f.write('ls -l in the world\n')
         f.write('lift is short , I use python \n')
         f.write('this is a pen \n')
@@ -25,7 +25,7 @@ def createfile():
 if __name__ == '__main__':
     createfile()
 
-    with(open('../file/lines.txt','r',encoding='utf-8')) as f:
+    with(open('../../file/lines.txt','r',encoding='utf-8')) as f:
         for line,prevlines in search(f,'python',5):
             for pline in prevlines:
                 # end=''，输出结尾不换行，而是'';
