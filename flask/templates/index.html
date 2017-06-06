@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+<!--super 获取模板本来就存在的内容-->
+    {{ super() }}
+    -2010
+{% endblock %}
+
+{% block body %}
+    Hello World
+    <!--jinja2的函数定义-->
+    {% macro render_comment(comment) %}
+        <li>1.{{ comment }}</li>
+    {% endmacro %}
+
+    <ul>
+        <li>你好呀</li>
+        {% for comment in comments %}
+            {{ render_comment(comment) }}
+        {% endfor %}
+    </ul>
+{% endblock %}
