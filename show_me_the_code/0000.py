@@ -3,7 +3,7 @@
 '''
 from PIL import Image,ImageFont,ImageDraw
 
-im = Image.open("./file/180.jpg")
+im = Image.open("./file/favicon.jpg")
 # 设置字体，大小
 font = ImageFont.truetype('../file/MONACO.TTF',16,encoding='utf-8')
 w,h = im.size

@@ -38,7 +38,7 @@ with(open('../file/write.txt','w',encoding="utf-8")) as ww:
 	ww.write('你好')
 
 # 打开非文本文件  需要file文件夹里添加一张图片
-with(open("../file/180.jpg",mode="rb")) as pic:
+with(open("../file/favicon.jpg",mode="rb")) as pic:
     print("name:",pic.name)
     print("mode:",pic.mode)
     # 二进制的流对象没有encoding，因为图片不是字符，不需要将字节序列转化为字符序列，

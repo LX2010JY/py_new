@@ -1,21 +1,21 @@
 {% extends "base.html" %}
-{% block title %}
+{% import "bootstrap/wtf.html" as wtf %}
 <!--super 获取模板本来就存在的内容-->
+{% block title %}
     {{ super() }}
     -2010
 {% endblock %}
 
-{% block body %}
-    Hello World
+{% block page_content %}
     <!--jinja2的函数定义-->
-    {% macro render_comment(comment) %}
-        <li>1.{{ comment }}</li>
+    {% macro welcome(name) %}
+        <h1>Hello,{% if name %} {{ name }} {% else %}Stranger{% endif %}</h1>
     {% endmacro %}
 
-    <ul>
-        <li>你好呀</li>
-        {% for comment in comments %}
-            {{ render_comment(comment) }}
-        {% endfor %}
-    </ul>
+    {{ welcome(name) }}
+
+    <p>The local date and time is {{moment(current_time).format('LLL')}}.</p>
+    <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+    {{ wtf.quick_form(form) }}
+
 {% endblock %}
